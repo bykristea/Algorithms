@@ -4,10 +4,11 @@ import argparse
 
 
 def find_max_profit(prices):
+  # starting at the first position in array and compare to the next element to the right
     min_price = prices[0]
     max_profit = prices[1] - min_price
-    for i in range(len(prices)):
-        for j in range(i + 1, len(prices)):
+    for i in range(len(prices)):  # looking at index
+        for j in range(i + 1, len(prices)):  # looking at item to the right of index
             if prices[j] - prices[i] > max_profit:
                 max_profit = prices[j] - prices[i]
 
